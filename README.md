@@ -16,3 +16,6 @@ Using...
   metasmith
   moment
 ```
+
+
+Code was copied and adapted from [https://github.com/expalmer/blog-example-with-metalsmith](https://github.com/expalmer/blog-example-with-metalsmith)
