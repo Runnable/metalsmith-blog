@@ -1,0 +1,12 @@
+{{> header}}
+  <section>
+    <a href="{{baseUrl}}">Back to Home</a>
+  </section>
+  <article>
+    <h1>{{this.title}}</h1>
+    <time datetime="{{ dateFormat this.date }}">{{ dateFormat this.date }}</time>
+    <div class="post__body">
+      {{{contents}}}
+    </div>
+  </article>
+{{> footer}}
