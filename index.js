@@ -6,12 +6,12 @@ var permalinks   = require('metalsmith-permalinks');
 var tags         = require('metalsmith-tags');
 var gist         = require('metalsmith-gist');
 var drafts       = require('metalsmith-drafts');
-var pagination   = require('metalsmith-pagination'); // <-- nova dependência
+var pagination   = require('metalsmith-pagination');
 
 var fs           = require('fs');
 var Handlebars   = require('handlebars');
 var moment       = require('moment');
-var baseUrl      = 'http://localhost:8001';
+var baseUrl      = process.env.BASE_URL || 'http://localhost:8001';
 
 Handlebars.registerPartial({
   'header': fs.readFileSync('./templates/partials/header.hbt').toString(),
@@ -27,7 +27,7 @@ Handlebars.registerHelper('dateGMT', function( context ) {
   context = context === 'new' ? new Date() : context;
   return context.toGMTString();
 });
-// helpers para marcar a página corrente
+
 Handlebars.registerHelper('currentPage', function( current, page ) {
   return current === page ? 'current' : '';
 });
@@ -46,15 +46,13 @@ Metalsmith(__dirname)
       pattern: ':title',
       relative: false
   }))
-  // detalhe: o pagination usa o ``collection`` e por isso deve ser chamado após o mesmo.
-  // outro detalhe: nós estamos usando também o ``permalinks`` que altera o nome das páginas,
-  //                portanto precisamos declarar o pagination após ele também.
+
   .use(pagination({
-    'collections.posts': {  // aqui vai o nome da collection, no nosso caso, collections.posts
-      perPage: 2, // por página
-      template: 'index.hbt', // o template
-      first: 'index.html', // ele cria um index.html na raiz com a primeira página
-      path: ':num/index.html' // modelo de como quer que sejam criadas as demais páginas
+    'collections.posts': {
+      perPage: 3,
+      template: 'index.hbt',
+      first: 'index.html',
+      path: ':num/index.html'
     }
   }))
   .use(gist())
