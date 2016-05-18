@@ -1,7 +1,7 @@
 ---
-title: Second metalsmith post ever
+title: Second metalsmith post
 template: posts.hbt
-date: {}
+date: 2016-05-20T00:00:00.000Z
 description: Very second post
 author: Anton
 tags: "metalsmith, nodejs, javascript"
