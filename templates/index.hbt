@@ -3,7 +3,7 @@
       {{{contents}}}
     </section>
     <section>
-      <h1>Lista dos Posts</h1>
+      <h1>Posts</h1>
       <ul>
         {{#each collections.posts }}
           <li>
