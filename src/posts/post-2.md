@@ -1,5 +1,5 @@
 ---
-title: Second metalsmith post ever
+title: Second post
 template: posts.hbt
 date: 2016-05-20T00:00:00.000Z
 description: Very second post
