@@ -7,12 +7,12 @@ EXPOSE 80 8000 8080 3000
 # Add repository files to container
 
 ENV BASE_URL=http://metalsmith-blog-staging-runnable.runnableapp.com
+RUN apt-get install -y python 
 
 #Start: Main Repository
 ADD [".", "/metalsmith-blog"]
 WORKDIR /metalsmith-blog
 RUN npm install
-RUN npm install -g superstatic
 RUN node index.js
 
 
@@ -22,4 +22,5 @@ WORKDIR /metalsmith-blog
 
 
 # Command to start the app
-CMD superstatic build --port 80 --host metalsmith-blog-staging-runnable.runnableapp.com
+CMD cd build; python -m SimpleHTTPServer 80
+
