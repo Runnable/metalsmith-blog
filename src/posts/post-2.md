@@ -1,5 +1,5 @@
 ---
-title: Second metalsmith post
+title: Runnable & metalsmith post
 template: posts.hbt
 date: 2016-05-20
 description: Very second post
