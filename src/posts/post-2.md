@@ -1,10 +1,11 @@
 ---
-title: Second metalsmith post
+title: Second post
 template: posts.hbt
-date: 2016-05-20
+date: 2016-05-20T00:00:00.000Z
 description: Very second post
 author: Anton
-tags: metalsmith, nodejs, javascript
+tags: "metalsmith, nodejs, javascript"
+published: true
 ---
 
 ## Hello
