@@ -2,7 +2,7 @@
 FROM node:0.10.38
 
 # Open up ports on the container
-EXPOSE 80 8000 8080 3000
+EXPOSE 80
 
 # Add repository files to container
 
