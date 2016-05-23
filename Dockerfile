@@ -9,7 +9,7 @@ EXPOSE 80 8000 8080 3000
 ENV BASE_URL=http://metalsmith-blog-staging-runnable.runnableapp.com
 
 #Start: Main Repository
-ADD ["./metalsmith-blog", "/metalsmith-blog"]
+ADD [".", "/metalsmith-blog"]
 WORKDIR /metalsmith-blog
 RUN npm install
 RUN npm install -g superstatic
