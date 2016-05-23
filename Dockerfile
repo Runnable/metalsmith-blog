@@ -22,4 +22,4 @@ WORKDIR /metalsmith-blog
 
 
 # Command to start the app
-CMD superstatic build --port 80
+CMD superstatic build --port 80 --host metalsmith-blog-staging-runnable.runnableapp.com
